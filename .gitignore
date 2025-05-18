@@ -1,0 +1,7 @@
+.vs/
+*.exe
+*.obj
+*.log
+*.user
+*.suo
+*.vcxproj.*
