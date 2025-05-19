@@ -33,6 +33,11 @@ public:
 		return smallJug == other.getSmallJug() && largeJug == other.getLargeJug();
 	}
 
+	bool operator!=(const JugState& other) const
+	{
+		return smallJug != other.getSmallJug() && largeJug != other.getLargeJug();
+	}
+
 };
 
 

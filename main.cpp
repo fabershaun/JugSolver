@@ -1,8 +1,7 @@
-#include "JugState.h"
-#include "Graph.h"
-#include "JugSolver.h"
+#include "ConsoleUI.h"
 
-void main()
+int main()
 {
-
+	ConsoleUI start;
+	start.run();
 }
