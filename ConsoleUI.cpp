@@ -9,13 +9,8 @@ void ConsoleUI::run()
 {
 	int smallJug, largeJug, goal;
 
-	cout << "Enter small jug capacity: ";
-	cin >> smallJug;
-
-	cout << "Enter large jug capacity: ";
 	cin >> largeJug;
-
-	cout << "Enter goal amount: ";
+	cin >> smallJug;
 	cin >> goal;
 
 	JugSolver solver(smallJug, largeJug, goal);
