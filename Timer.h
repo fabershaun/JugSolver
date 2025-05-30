@@ -2,6 +2,7 @@
 
 #include <chrono>
 
+// Timer class - measures elapsed time for performance evaluation
 class Timer
 {
 private:

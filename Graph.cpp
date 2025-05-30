@@ -1,4 +1,5 @@
 #include "Graph.h"
+#include <algorithm>
 
 
 // Adding all the posibile neighbors to a current state
@@ -41,18 +42,9 @@ vector<JugState> Graph::generateNeighbors(const JugState& state)
         neighbors.emplace_back(s + transfer, l - transfer);
     }
 
-    std::sort(neighbors.begin(), neighbors.end(), compareJugStates);
+    std::sort(neighbors.begin(), neighbors.end(), JugState::compareJugStates);
     return neighbors;
 }
-
-bool Graph::compareJugStates(const JugState& a, const JugState& b)
-{
-    if (a.getSmallJug() == b.getSmallJug())         // If the small jugs are equal, we'll compare by the large jugs
-        return a.getLargeJug() < b.getLargeJug();
-
-    return a.getSmallJug() < b.getSmallJug();
-}
-
 
 
 // Build the full state graph:

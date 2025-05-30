@@ -2,22 +2,15 @@
 
 #include <string>
 #include <iostream>
+
 using namespace std;
 
-/*
- * JugState class - represents a single state in the Water Jug Problem.
- *
- * Responsibilities:
- * - Store the amount of water in the small and large jugs.
- * - Support equality comparison for use in maps.
- *
- * Used as:
- * - Graph node in the state-space graph.
- * - Keys in unordered_map (hash function).
- */
 
+ // JugState class - represents a single state in the Water Jug Problem.
+ // Support equality comparison for use in maps.
 class JugState
 {
+
 private:
 	int smallJug;
 	int largeJug;
@@ -35,9 +28,10 @@ public:
 
 	bool operator!=(const JugState& other) const
 	{
-		return smallJug != other.getSmallJug() && largeJug != other.getLargeJug();
+		return smallJug != other.getSmallJug() || largeJug != other.getLargeJug();
 	}
 
+	static bool compareJugStates(const JugState& a, const JugState& b);
 };
 
 

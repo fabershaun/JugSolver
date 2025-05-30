@@ -2,24 +2,12 @@
 
 #include <unordered_map>
 #include <vector>
-#include <algorithm>
 #include "JugState.h"
 
 using namespace std;
 
-/*
- * Graph class - represents the full state graph for the Water Jug Problem.
- *
- * Responsibilities:
- * - Represent each jug state (small, large) as a graph node.
- * - Define edges between states via valid operations (fill, empty, transfer).
- * - Build the complete graph for all possible states.
- * - Provide access to neighbors of a given state (lexicographically sorted).
- *
- * Used in:
- * - BFS search to find the shortest sequence of operations from (0,0) to (0,W).
- */
-
+ // Graph class - represents the full state graph for the Water Jug Problem.
+ // Build the complete graph for all possible states.
 class Graph
 {
 
@@ -38,8 +26,6 @@ private:
 
 	// Generates all valid one-move neighbor states from the current state
 	vector<JugState> generateNeighbors(const JugState& state);
-
-	static bool compareJugStates(const JugState& a, const JugState& b);
 
 public:
 	Graph(int smallJugCap, int largeJugCap) : smallJugMaxCapacity(smallJugCap), largeJugMaxCapacity(largeJugCap) {}
